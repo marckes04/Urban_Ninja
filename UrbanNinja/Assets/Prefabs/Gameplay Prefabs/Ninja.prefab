@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 1837273585998621381}
   - component: {fileID: 1831115380064086332}
   - component: {fileID: 7430539624555521999}
+  - component: {fileID: 1082648348}
   m_Layer: 0
   m_Name: Ninja
   m_TagString: Untagged
@@ -425,11 +426,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitPoint: {fileID: 4221149040040571257}
   slashThreeEffectPrefab: {fileID: 100014, guid: 2f8ef9eb56c6f1d46a58225698863a6f, type: 3}
-  slashThreePoint: {fileID: 0}
-  swordHit1: {fileID: 0}
-  swordHit2: {fileID: 0}
-  earthHitMusic: {fileID: 0}
-  jiaoHangSheng: {fileID: 0}
+  slashThreePoint: {fileID: 9169036766812627865}
+  swordHit1: {fileID: 8300000, guid: 453cd5faf3e32a841af4dcadad71b5a0, type: 3}
+  swordHit2: {fileID: 8300000, guid: 453cd5faf3e32a841af4dcadad71b5a0, type: 3}
+  earthHitMusic: {fileID: 8300000, guid: 9cbc1427afecf234e98ecd19b2ac391a, type: 3}
+  jiaoHangSheng: {fileID: 8300000, guid: 1d20144a74426134eaabe1230aba2001, type: 3}
+--- !u!114 &1082648348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592472648261336970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b19adf659a2ac70498d118ca11a36f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animatorController: {fileID: 9100000, guid: 8db498fa3564d0c49914eaba533aef2f, type: 2}
+  animator: {fileID: 592472648254032958}
+  emitType: 0
 --- !u!1 &592472648261336972
 GameObject:
   m_ObjectHideFlags: 0
