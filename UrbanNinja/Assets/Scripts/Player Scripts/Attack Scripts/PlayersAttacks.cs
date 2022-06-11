@@ -96,6 +96,27 @@ public class PlayersAttacks : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            if (s2_NotUsed)
+            {
+                s2_NotUsed = false;
+                anim.SetBool(ANIMATION_SKILL_2,true);
+                StartCoroutine(ResetSkills(2));
+
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            if (s3_NotUsed)
+            {
+                s3_NotUsed = false;
+                anim.SetBool(ANIMATION_SKILL_3, true);
+                StartCoroutine(ResetSkills(3));
+
+            }
+        }
     }
 
     // SKILL EFFECTS
@@ -136,6 +157,59 @@ public class PlayersAttacks : MonoBehaviour
         Instantiate(skillOneDamagePrefab, skillOnePoint_6.position, skillOnePoint_6.rotation);
         Instantiate(skillOneDamagePrefab, skillOnePoint_7.position, skillOnePoint_7.rotation);
         Instantiate(skillOneDamagePrefab, skillOnePoint_8.position, skillOnePoint_8.rotation);
+    }
+
+    void SkillTwo(bool skillTwo)
+    {
+        if (skillTwo)
+        {
+            Instantiate(skillTwo_EffectPrefab, skillTwoPoint_1.position, skillTwoPoint_1.rotation);
+            audioSource.PlayOneShot(skillTwoMusic);
+            StartCoroutine(SkillTwoCoroutine());
+
+        }
+    }
+
+    void SkillTwoEnd(bool skillTwoEnd)
+    {
+        if (skillTwoEnd)
+        {
+            anim.SetBool(ANIMATION_SKILL_2, false);
+           
+        }
+    }
+
+    IEnumerator SkillTwoCoroutine()
+    {
+        yield return new WaitForSeconds(1.5f);
+        Instantiate(skillTwo_DamagePrefab, skillTwoPoint_1.position, skillTwoPoint_1.rotation);
+        Instantiate(skillTwo_DamagePrefab, skillTwoPoint_2.position, skillTwoPoint_2.rotation);
+        Instantiate(skillTwo_DamagePrefab, skillTwoPoint_3.position, skillTwoPoint_3.rotation);
+        Instantiate(skillTwo_DamagePrefab, skillTwoPoint_4.position, skillTwoPoint_4.rotation);
+        Instantiate(skillTwo_DamagePrefab, skillTwoPoint_5.position, skillTwoPoint_5.rotation);
+        Instantiate(skillTwo_DamagePrefab, skillTwoPoint_6.position, skillTwoPoint_6.rotation);
+    }
+
+    // SKILL THREE
+
+    void SkillThree(bool skillThree)
+    {
+        if (skillThree)
+        {
+            Instantiate(skillThree_EffectPrefab, skillThreePoint_1.position, skillThreePoint_1.rotation);
+            Instantiate(skillThree_EffectPrefab, skillThreePoint_2.position, skillThreePoint_2.rotation);
+            Instantiate(skillThree_EffectPrefab, skillThreePoint_3.position, skillThreePoint_3.rotation);
+            Instantiate(skillThree_EffectPrefab, skillThreePoint_4.position, skillThreePoint_4.rotation);
+            Instantiate(skillThree_EffectPrefab, skillThreePoint_5.position, skillThreePoint_5.rotation);
+        }
+    }
+
+    void SkillThreeEnd(bool skillThreeEnd)
+    {
+        if (skillThreeEnd)
+        {
+            anim.SetBool(ANIMATION_SKILL_3, false);
+        }
     }
 
     IEnumerator ResetSkills(int skill)
