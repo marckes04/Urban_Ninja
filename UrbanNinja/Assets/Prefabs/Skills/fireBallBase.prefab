@@ -19356,6 +19356,9 @@ GameObject:
   m_Component:
   - component: {fileID: 400008}
   - component: {fileID: 8200000}
+  - component: {fileID: 1884263055916169321}
+  - component: {fileID: 1192258860621855465}
+  - component: {fileID: 7174500769105320825}
   m_Layer: 0
   m_Name: fireBallBase
   m_TagString: missile
@@ -19474,3 +19477,40 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1884263055916169321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e26639850be317c47b416402ab87afd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timmer: 5
+--- !u!114 &1192258860621855465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad58fbf8866abe845aa2542ff30ecc6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7174500769105320825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e26bbf29ce8abac43ae50a6bdb6639ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
