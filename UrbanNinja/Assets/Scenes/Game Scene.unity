@@ -492,12 +492,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 592472648261336970, guid: bf8a2ef3c0c426b4ebc9773808c589f3, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 592472648261336970, guid: bf8a2ef3c0c426b4ebc9773808c589f3, type: 3}
       propertyPath: m_Name
       value: Ninja
+      objectReference: {fileID: 0}
+    - target: {fileID: 592472648261336970, guid: bf8a2ef3c0c426b4ebc9773808c589f3, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 592472648261821418, guid: bf8a2ef3c0c426b4ebc9773808c589f3, type: 3}
       propertyPath: m_RootOrder
@@ -599,6 +599,14 @@ PrefabInstance:
     - target: {fileID: 6412024356658928819, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
       propertyPath: m_Name
       value: zombieGirl
+      objectReference: {fileID: 0}
+    - target: {fileID: 6412024357712055837, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
+      propertyPath: chaseSpeed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8642496102682107586, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
+      propertyPath: realHealth
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}

@@ -479,6 +479,7 @@ GameObject:
   - component: {fileID: 1831115380064086332}
   - component: {fileID: 7430539624555521999}
   - component: {fileID: 1082648348}
+  - component: {fileID: 1788321561350601825}
   m_Layer: 0
   m_Name: Ninja
   m_TagString: Untagged
@@ -755,6 +756,18 @@ MonoBehaviour:
   animatorController: {fileID: 9100000, guid: 8db498fa3564d0c49914eaba533aef2f, type: 2}
   animator: {fileID: 592472648254032958}
   emitType: 0
+--- !u!114 &1788321561350601825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592472648261336970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6979a42798e04f4489f72ada089669ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &592472648261336972
 GameObject:
   m_ObjectHideFlags: 0
@@ -2423,14 +2436,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a229fd5df6dddb04cb440920547ee4d3, type: 3}
---- !u!1 &5556888443430675367 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: a229fd5df6dddb04cb440920547ee4d3, type: 3}
-  m_PrefabInstance: {fileID: 5556888443430708487}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5556888443431108487 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: a229fd5df6dddb04cb440920547ee4d3, type: 3}
+  m_PrefabInstance: {fileID: 5556888443430708487}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5556888443430675367 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: a229fd5df6dddb04cb440920547ee4d3, type: 3}
   m_PrefabInstance: {fileID: 5556888443430708487}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1045875420
