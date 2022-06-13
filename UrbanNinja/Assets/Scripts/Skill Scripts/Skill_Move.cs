@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Skill_Move : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float X = 0f;
+    public float Y = 0f;
+    public float Z = 0f;
 
-    // Update is called once per frame
+    public bool local = false;
+
     void Update()
     {
-        
+        if (local)
+        {
+            transform.Translate(new Vector3(X, Y, Z) * Time.deltaTime);
+        }
+
+        if (!local)
+        {
+            transform.Translate(new Vector3(X,Y,Z)*Time.deltaTime, Space.World);
+        }
     }
 }

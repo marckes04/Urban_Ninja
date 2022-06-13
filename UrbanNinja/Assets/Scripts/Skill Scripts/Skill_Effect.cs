@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class Skill_Effect : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public LayerMask ignoreLayers;
+    public GameObject skillEffectPrefab;
+    public float radius;
 
-    // Update is called once per frame
+    private bool collided = false;
+
     void Update()
     {
-        
+        Collider[] hits = Physics.OverlapSphere(transform.position,radius,~ignoreLayers);
+
+        foreach(Collider c in hits)
+        {
+            if (c.isTrigger)
+            {
+                continue;
+            }
+            collided = true;
+        }
+
+        if (collided)
+        {
+            Instantiate(skillEffectPrefab, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
     }
 }

@@ -33115,6 +33115,10 @@ GameObject:
   m_Component:
   - component: {fileID: 400014}
   - component: {fileID: 8200000}
+  - component: {fileID: 746377291105833492}
+  - component: {fileID: -6533574810116739449}
+  - component: {fileID: -2828308510360456779}
+  - component: {fileID: -5739520693577433392}
   m_Layer: 0
   m_Name: fireExplosionBase 1
   m_TagString: explosion
@@ -33233,3 +33237,55 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &746377291105833492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e26639850be317c47b416402ab87afd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timmer: 3
+--- !u!114 &-6533574810116739449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29b86f524b81fe948b681466da72cdc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 0
+  y: 360
+  z: 0
+--- !u!114 &-2828308510360456779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e51053771139d245944edbd7e84411c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-5739520693577433392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c60ef741269484f91dede2cba1c5d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
