@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -23,6 +24,10 @@ public class EnemyAI : MonoBehaviour
 
     private string BASE_LAYER_STAND = "Base Layer.Stand";
 
+    private NavMeshAgent navAgent;
+    public Transform[] navPoints;
+    private int NavigationIndex;
+
     void Awake()
     {
         col = GetComponent<CapsuleCollider>();
@@ -32,37 +37,86 @@ public class EnemyAI : MonoBehaviour
         zombieTransform = this.transform;
         enemyHealth = GetComponent<EnemyHealth>();
         playerHealth = player.gameObject.GetComponent<PlayerHealth>();
+
+        navAgent = GetComponent<NavMeshAgent>();
+        NavigationIndex = Random.Range(0, navPoints.Length);
+        navAgent.SetDestination(navPoints[NavigationIndex].position);
     }
 
     void Update()
     {
         float distance = Vector3.Distance(zombieTransform.position, player.position);
 
+        //if(enemyHealth.realHealth > 0)
+        //{
+        //    if(distance > 2.5f)
+        //    {
+        //        Chase();
+        //    }
+        //    else
+        //    {
+        //        Attack();
+        //    }
+           
+        //    transform.LookAt(player);
+           
+        //}
+
         if(enemyHealth.realHealth > 0)
         {
-            if(distance > 2.5f)
+            if(distance > 7f)
             {
-                Chase();
+                Search();
+                navAgent.Resume();
+            }else
+            {
+                navAgent.Stop();
+                if(distance > 2.5f)
+                {
+                    Chase();
+                }
+                else
+                {
+                    Attack();
+                }
+                transform.LookAt(player);
+            }    
+        }
+    }
+    void Search()
+    {
+        if(navAgent.remainingDistance <= 0.5f)
+        {
+            anim.SetFloat(ANIMATION_SPEED, 0f);
+            anim.SetBool(ANIMATION_ATTACK, false);
+            anim.SetBool(ANIMATION_RUN, false);
+
+            if(NavigationIndex == navPoints.Length - 1)
+            {
+                NavigationIndex = 0;
             }
             else
             {
-                Attack();
+                NavigationIndex++;
             }
-           
-            transform.LookAt(player);
-           
+            navAgent.SetDestination(navPoints[NavigationIndex].position);
+        }
+        else
+        {
+            anim.SetFloat(ANIMATION_SPEED, 1f);
+            anim.SetBool(ANIMATION_ATTACK, false);
+            anim.SetBool(ANIMATION_RUN, false);
         }
     }
-
     void Chase()
     {
         anim.SetBool(ANIMATION_RUN, true);
         anim.SetFloat(ANIMATION_SPEED, chaseSpeed);
-        anim.SetBool(ANIMATION_ATTACK, true);
+        anim.SetBool(ANIMATION_ATTACK, false);
     }
 
     void Attack()
     {
-
+        anim.SetBool(ANIMATION_ATTACK, true);
     }
 }
