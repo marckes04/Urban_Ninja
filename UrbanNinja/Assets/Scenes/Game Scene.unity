@@ -675,22 +675,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2868239108049124137, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
-      propertyPath: m_Speed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2868239108049124137, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
-      propertyPath: m_AngularSpeed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 2868239108049124137, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
-      propertyPath: m_WalkableMask
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2868239108049124137, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
-      propertyPath: avoidancePriority
-      value: 99
-      objectReference: {fileID: 0}
     - target: {fileID: 6412024356658561363, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -740,10 +724,6 @@ PrefabInstance:
       value: zombieGirl
       objectReference: {fileID: 0}
     - target: {fileID: 6412024357712055837, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
-      propertyPath: navPoints.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6412024357712055837, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
       propertyPath: navPoints.Array.data[0]
       value: 
       objectReference: {fileID: 605264309}
@@ -755,5 +735,22 @@ PrefabInstance:
       propertyPath: navPoints.Array.data[2]
       value: 
       objectReference: {fileID: 1236643871}
+    - target: {fileID: 7409325914634976512, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409325914634976512, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 8642496102682107586, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
+      propertyPath: deadEffectPoint
+      value: 
+      objectReference: {fileID: 6412024357712055836}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
+--- !u!4 &6412024357712055836 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7409325914634976512, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
+  m_PrefabInstance: {fileID: 6412024357712055835}
+  m_PrefabAsset: {fileID: 0}
