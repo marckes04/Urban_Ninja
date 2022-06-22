@@ -1,5 +1,91 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1204811512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1204811513}
+  - component: {fileID: 1204811514}
+  m_Layer: 10
+  m_Name: Enemy Attack Point 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1204811513
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204811512}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.45, y: -0.01, z: 0.08}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6412024356658561307}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1204811514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204811512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 697374fc658ff4043b6059e7889100c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2128273808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2128273809}
+  - component: {fileID: 2128273810}
+  m_Layer: 10
+  m_Name: Enemy Attack Point 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2128273809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128273808}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.3, y: 0.16, z: -0.12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6412024356658561357}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2128273810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128273808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 697374fc658ff4043b6059e7889100c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6412024356658928801
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,6 +301,7 @@ Transform:
   - {fileID: 6412024356658561377}
   - {fileID: 6412024356658561401}
   - {fileID: 6412024356658561393}
+  - {fileID: 2128273809}
   m_Father: {fileID: 6412024356658561359}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -265,6 +352,8 @@ GameObject:
   - component: {fileID: 2868239108049124137}
   - component: {fileID: 6412024357712055837}
   - component: {fileID: 8642496102682107586}
+  - component: {fileID: 6732472205030179820}
+  - component: {fileID: 5776237494256948217}
   m_Layer: 10
   m_Name: zombieGirl
   m_TagString: Enemy
@@ -488,9 +577,39 @@ MonoBehaviour:
   realHealth: 100
   enemyDeadSound: {fileID: 8300000, guid: 5631c541ce0f73449b32454643b649a2, type: 3}
   deadEffect: {fileID: 100004, guid: dcd9cd85101f2df48b9f94d6a44227fb, type: 3}
-  deadEffectPoint: {fileID: 0}
+  deadEffectPoint: {fileID: 7409325914634976512}
   attackPointOne: {fileID: 0}
   attackPointTwo: {fileID: 0}
+--- !u!114 &6732472205030179820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6412024356658928819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c065144f230e8b4fa2898f5ba286686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPointOne: {fileID: 1204811512}
+  attackpointTwo: {fileID: 2128273808}
+  EnemyAttackEffect: {fileID: 100004, guid: c43494aa044390a45a2037c104457379, type: 3}
+--- !u!114 &5776237494256948217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6412024356658928819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b19adf659a2ac70498d118ca11a36f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animatorController: {fileID: 9100000, guid: 9979e87ed0868b3489bd98a74e9ff480, type: 2}
+  animator: {fileID: 6412024356651642571}
+  emitType: 0
 --- !u!1 &6412024356658928823
 GameObject:
   m_ObjectHideFlags: 0
@@ -2135,6 +2254,7 @@ Transform:
   - {fileID: 6412024356658561343}
   - {fileID: 6412024356658561335}
   - {fileID: 6412024356658561295}
+  - {fileID: 1204811513}
   m_Father: {fileID: 6412024356658561285}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2223,7 +2343,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8461001823276115724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 12.48, z: 3.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6412024356658561363}
