@@ -549,6 +549,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1204811512, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
   m_PrefabInstance: {fileID: 6412024357712055835}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1204811513 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1204811513, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
+  m_PrefabInstance: {fileID: 6412024357712055835}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1236643870
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,6 +622,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2128273808, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
   m_PrefabInstance: {fileID: 6412024357712055835}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2128273810 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2128273809, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
+  m_PrefabInstance: {fileID: 6412024357712055835}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5556888441391698506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -624,21 +634,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1082648348, guid: bf8a2ef3c0c426b4ebc9773808c589f3, type: 3}
-      propertyPath: emitType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1082648348, guid: bf8a2ef3c0c426b4ebc9773808c589f3, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 592472648261336970, guid: bf8a2ef3c0c426b4ebc9773808c589f3, type: 3}
       propertyPath: m_Name
       value: Ninja
-      objectReference: {fileID: 0}
-    - target: {fileID: 592472648261336970, guid: bf8a2ef3c0c426b4ebc9773808c589f3, type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 592472648261821418, guid: bf8a2ef3c0c426b4ebc9773808c589f3, type: 3}
       propertyPath: m_RootOrder
@@ -684,18 +682,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1788321561350601825, guid: bf8a2ef3c0c426b4ebc9773808c589f3, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788321561350601825, guid: bf8a2ef3c0c426b4ebc9773808c589f3, type: 3}
-      propertyPath: realHealth
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 1831115380064086332, guid: bf8a2ef3c0c426b4ebc9773808c589f3, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf8a2ef3c0c426b4ebc9773808c589f3, type: 3}
 --- !u!1001 &6412024357712055835
@@ -716,6 +702,38 @@ PrefabInstance:
     - target: {fileID: 1204811513, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204811514, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
+      propertyPath: radius
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204811514, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
+      propertyPath: hitPoint
+      value: 
+      objectReference: {fileID: 1204811513}
+    - target: {fileID: 1204811514, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
+      propertyPath: DamageCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204811514, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
+      propertyPath: playerLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128273810, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
+      propertyPath: radius
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128273810, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
+      propertyPath: hitPoint
+      value: 
+      objectReference: {fileID: 2128273810}
+    - target: {fileID: 2128273810, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
+      propertyPath: DamageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128273810, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
+      propertyPath: playerLayer.m_Bits
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 6412024356658561363, guid: 0a4cc4f75d44a1041b74e117c618b940, type: 3}
       propertyPath: m_RootOrder

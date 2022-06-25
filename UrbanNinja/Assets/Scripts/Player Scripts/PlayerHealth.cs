@@ -48,7 +48,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (playerDead)
         {
-            //StopPlayerDeadAnimation();
+            StopPlayerDeadAnimation();
         }
 
         //if(realHealth > 100)
