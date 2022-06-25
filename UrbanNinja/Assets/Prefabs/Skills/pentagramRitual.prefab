@@ -4971,6 +4971,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e51053771139d245944edbd7e84411c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zombieLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  radius: 1.5
+  damageCount: 100
+  DamageEffect: {fileID: 100002, guid: 23aed32f22650944091fb538a9ace530, type: 3}
 --- !u!114 &4613012851355831015
 MonoBehaviour:
   m_ObjectHideFlags: 0

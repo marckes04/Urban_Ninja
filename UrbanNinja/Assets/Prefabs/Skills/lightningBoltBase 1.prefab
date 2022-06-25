@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 5435668603187849466}
   - component: {fileID: 6380317979505121028}
+  - component: {fileID: 5813801797766066804}
   m_Layer: 0
   m_Name: DamagePoint
   m_TagString: Untagged
@@ -44,6 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e51053771139d245944edbd7e84411c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zombieLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  radius: 4
+  damageCount: 100
+  DamageEffect: {fileID: 100010, guid: eff3c99881b6c5c4bac5fe6d942fe34e, type: 3}
 --- !u!114 &6380317979505121028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,6 +63,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1c60ef741269484f91dede2cba1c5d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5813801797766066804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e26639850be317c47b416402ab87afd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timmer: 0.5
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0
