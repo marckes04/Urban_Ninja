@@ -29,10 +29,11 @@ public class EnemyAttackCollision : MonoBehaviour
                 continue;
             }
             collided = true;
-        }
-        if (collided)
-        {
-            playerHealth.TakeDamage(DamageCount);
-        }
+
+            if (collided)
+            {
+                playerHealth.TakeDamage(DamageCount);
+            }
+        } 
     }
 }

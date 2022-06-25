@@ -71,7 +71,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float Amount)
+    public void EnemyTakeDamage(float Amount)
     {
         realHealth -= Amount;
 
