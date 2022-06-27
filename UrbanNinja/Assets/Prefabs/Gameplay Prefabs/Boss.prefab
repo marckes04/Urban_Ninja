@@ -349,6 +349,10 @@ GameObject:
   - component: {fileID: 13600000}
   - component: {fileID: 8200000}
   - component: {fileID: 11400004}
+  - component: {fileID: 980632462}
+  - component: {fileID: 980632463}
+  - component: {fileID: 980632457}
+  - component: {fileID: 4594196314471247982}
   m_Layer: 11
   m_Name: Boss
   m_TagString: Boss
@@ -518,6 +522,75 @@ AudioSource:
     m_PostInfinity: 2
     m_RotationOrder: 0
 --- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b19adf659a2ac70498d118ca11a36f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animatorController: {fileID: 9100000, guid: 26b6662d25a427d4e90237d7487f35ab, type: 2}
+  animator: {fileID: 9500000}
+  emitType: 0
+--- !u!114 &980632462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100022}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c70c473c7b80234e8a31e16fd607177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &980632463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59d7f0ade96baee4487ef16c8f741ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  realHealth: 200
+  deadSound: {fileID: 0}
+--- !u!114 &980632457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ed50103c50c1fe40bf91576af2642d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skill3: {fileID: 100014, guid: 2f8ef9eb56c6f1d46a58225698863a6f, type: 3}
+  skill3Point: {fileID: 100154}
+  earthHit: {fileID: 8300000, guid: f3d13f3566aab4de597b752c72c81478, type: 3}
+  skill1: {fileID: 100010, guid: 7133a6e6dd0f30142b501f9b4f7206b4, type: 3}
+  skill1_Point_1: {fileID: 100112}
+  skill1_Point_2: {fileID: 100372}
+  skill1_Point_3: {fileID: 100124}
+  skill1_Point_4: {fileID: 100176}
+  skill1_Point_5: {fileID: 100030}
+  skill1_Point_6: {fileID: 100376}
+  skill1_Point_7: {fileID: 100384}
+  skill1_Point_8: {fileID: 100274}
+  skill1_Point_9: {fileID: 100188}
+  skill1_Point_10: {fileID: 100010}
+  sword: {fileID: 100132}
+  hitPoint: {fileID: 1386556302262758}
+--- !u!114 &4594196314471247982
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20581,6 +20654,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4063563877595254}
   - component: {fileID: 135478687143166088}
+  - component: {fileID: 446397608}
   m_Layer: 11
   m_Name: Boss Move Collider
   m_TagString: Untagged
@@ -20615,6 +20689,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &446397608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365663208916618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 954cf2d04a4a17044b97d90118dbc003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1386556302262758
 GameObject:
   m_ObjectHideFlags: 0
@@ -20624,6 +20710,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507569852660846}
+  - component: {fileID: 8868106555566023813}
   m_Layer: 0
   m_Name: Hit Point
   m_TagString: Untagged
@@ -20639,9 +20726,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386556302262758}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.352, y: 0.92, z: -0.586}
+  m_LocalPosition: {x: -0.306, y: 0.906, z: -0.648}
   m_LocalScale: {x: 1.0000001, y: 1.0000004, z: 1.0000006}
   m_Children: []
   m_Father: {fileID: 400132}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8868106555566023813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386556302262758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 697374fc658ff4043b6059e7889100c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  radius: 0.3
+  hitPoint: {fileID: 4507569852660846}
+  DamageCount: 10

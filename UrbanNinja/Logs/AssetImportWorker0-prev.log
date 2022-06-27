@@ -15,11 +15,11 @@ C:/Users/AsusPC/Desktop/MyGames/Demo/Mobile/3D/Urban_Ninja/UrbanNinja
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-65267
+49498
 Successfully changed project path to: C:/Users/AsusPC/Desktop/MyGames/Demo/Mobile/3D/Urban_Ninja/UrbanNinja
 C:/Users/AsusPC/Desktop/MyGames/Demo/Mobile/3D/Urban_Ninja/UrbanNinja
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 200.98 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 863.76 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.26f1 (7298b473bc1a)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/Resources/UnitySubsystems
@@ -31,3 +31,9 @@ Direct3D:
     Vendor:   
     VRAM:     3962 MB
     Driver:   27.21.14.5763
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56308
+Begin MonoManager ReloadAssembly
