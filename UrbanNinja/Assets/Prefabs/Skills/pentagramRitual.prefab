@@ -4989,6 +4989,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1c60ef741269484f91dede2cba1c5d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  radius: 1.5
+  damageEffect: {fileID: 100002, guid: 23aed32f22650944091fb538a9ace530, type: 3}
+  damageCount: 10
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0
