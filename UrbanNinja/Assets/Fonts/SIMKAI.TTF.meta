@@ -1,21 +1,21 @@
 fileFormatVersion: 2
-guid: 3d0fa790da5c03242a5a27fb94288415
+guid: 730a2b7bc8e454dbbb4334c7ff022933
+timeCreated: 1487421017
+licenseType: Free
 TrueTypeFontImporter:
-  externalObjects: {}
   serializedVersion: 4
   fontSize: 16
   forceTextureCase: -2
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
+  fontName: KaiTi
   fontNames:
   - KaiTi
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
-  useLegacyBoundsCalculation: 0
-  shouldRoundAdvanceValue: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 

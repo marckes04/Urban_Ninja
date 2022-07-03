@@ -1,32 +1,55 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skill_Effect : MonoBehaviour
-{
-    public LayerMask ignoreLayers;
-    public GameObject skillEffectPrefab;
-    public float radius;
+public class Skill_Effect : MonoBehaviour {
 
-    private bool collided = false;
+	public LayerMask ignoreLayers;
+	public GameObject skillEffectPrefab;
+	public float radius;
 
-    void Update()
-    {
-        Collider[] hits = Physics.OverlapSphere(transform.position,radius,~ignoreLayers);
+	private bool collided = false;
 
-        foreach(Collider c in hits)
-        {
-            if (c.isTrigger)
-            {
-                continue;
-            }
-            collided = true;
-        }
+	void Update () {
+		Collider[] hits = Physics.OverlapSphere (transform.position, radius, ~ignoreLayers);
 
-        if (collided)
-        {
-            Instantiate(skillEffectPrefab, transform.position, transform.rotation);
-            Destroy(gameObject);
-        }
-    }
-}
+		foreach (Collider c in hits) {
+			if (c.isTrigger) {
+				continue;
+			}
+			collided = true;
+		}
+
+		if (collided) {
+			Instantiate (skillEffectPrefab, transform.position, transform.rotation);
+			DestroyObject (gameObject);
+		}
+
+	}
+
+} // class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

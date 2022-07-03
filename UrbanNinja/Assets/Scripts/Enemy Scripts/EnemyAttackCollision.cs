@@ -1,39 +1,64 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAttackCollision : MonoBehaviour
-{
-    public LayerMask playerLayer;
-    public float radius;
-    private bool collided;
+public class EnemyAttackCollision : MonoBehaviour {
 
-    public Transform hitPoint;
-    public float DamageCount;
+	public LayerMask playerLayer;
+	public float radius;
+	private bool collided;
 
-    
-    private PlayerHealth playerHealth;
+	public Transform hitPoint;
+	public float damageCount;
 
-    void Awake()
-    {
-        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
-    }
+	private PlayerHealth playerHealth;
 
-    void Update()
-    {
-        Collider[] hits = Physics.OverlapSphere(hitPoint.position, radius,playerLayer);
-        foreach(Collider c in hits)
-        {
-            if (c.isTrigger)
-            {
-                continue;
-            }
-            collided = true;
+	void Awake () {
+		playerHealth = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerHealth> ();
+	}
 
-            if (collided)
-            {
-                playerHealth.TakeDamage(DamageCount);
-            }
-        } 
-    }
-}
+	void Update () {
+		Collider[] hits = Physics.OverlapSphere (hitPoint.position, radius, playerLayer);
+		foreach (Collider c in hits) {
+			if (c.isTrigger) {
+				continue;
+			}
+			collided = true;
+
+			if (collided) {
+				playerHealth.TakeDamage (damageCount);
+			}
+		}
+	}
+
+} // class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

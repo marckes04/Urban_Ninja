@@ -1,24 +1,56 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossStartMove : MonoBehaviour
-{
-    private SphereCollider col;
-    private BossAI bossAI;
+public class BossStartMove : MonoBehaviour {
 
-    void Awake()
-    {
-        col = GetComponent<SphereCollider>();
-        bossAI = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossAI>();
-    }
+	private SphereCollider col;
+	private BossAI bossAI;
 
-    void OnTriggerEnter(Collider target)
-    {
-        if (target.tag == "Player")
-        {
-            bossAI.enabled = true;
-            col.enabled = false;
-        }
-    }
-}
+	void Awake () {
+		col = GetComponent<SphereCollider> ();
+		bossAI = GameObject.FindGameObjectWithTag ("Boss").GetComponent<BossAI> ();
+	}
+
+	void OnTriggerEnter (Collider target) {
+		if (target.tag == "Player") {
+			bossAI.enabled = true;
+			col.enabled = false;
+		}
+	}
+
+} // class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

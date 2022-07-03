@@ -1,29 +1,53 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class PlayerAttackButton: MonoBehaviour, IPointerDownHandler, IPointerUpHandler
-{
-    private PlayersAttacks playerAttack;
+public class PlayerAttackButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
 
-    void Awake()
-    {
-        playerAttack = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayersAttacks>();
-    }
+	private PlayersAttacks playerAttack;
 
-    public void OnPointerDown(PointerEventData data)
-    {
-        if(gameObject.name == "AttackButton")
-        {
-            playerAttack.AttackButtonPressed();
-        }
-    }
-    public void OnPointerUp(PointerEventData data)
-    {
-        if (gameObject.name == "AttackButton")
-        {
-            playerAttack.AttackButtonReleased();
-        }
-    }
-}
+	void Awake() {
+		playerAttack = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayersAttacks> ();
+	}
+
+	public void OnPointerDown(PointerEventData data) {
+		if (gameObject.name == "Attack Button") {
+			playerAttack.AttackButtonPressed ();
+		}
+	}
+
+	public void OnPointerUp(PointerEventData data) {
+		if (gameObject.name == "Attack Button") {
+			playerAttack.AttackButtonReleased ();
+		}
+	}
+
+} // class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

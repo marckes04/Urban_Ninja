@@ -1,10 +1,9 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WaitBeforeAttackingAgain : MonoBehaviour
-{
+public class WaitBeforeAttackingAgain : MonoBehaviour {
 
 	public int waitTime;
 	private int fadeTime;
@@ -17,62 +16,91 @@ public class WaitBeforeAttackingAgain : MonoBehaviour
 
 	private GameObject waitBeforeAttackingPanel;
 
-	void Awake()
-	{
-		waitBeforeAttackingPanel = transform.GetChild(0).gameObject;
+	void Awake () {
+		waitBeforeAttackingPanel = transform.GetChild (0).gameObject;
 
-		waitText = waitBeforeAttackingPanel.GetComponentInChildren<Text>();
-		waitText.text = waitTime.ToString();
+		waitText = waitBeforeAttackingPanel.GetComponentInChildren<Text> ();
+		waitText.text = waitTime.ToString ();
 
-		fadeImg = waitBeforeAttackingPanel.GetComponent<Image>();
+		fadeImg = waitBeforeAttackingPanel.GetComponent<Image> ();
 
 		fadeTime = waitTime;
 
-		waitBeforeAttackingPanel.SetActive(false);
+		waitBeforeAttackingPanel.SetActive (false);
 	}
 
-	void Update()
-	{
-		FadeOut();
+	void Update () {
+		FadeOut ();
 	}
 
-	public void ActivateFadeOut()
-	{
-		waitBeforeAttackingPanel.SetActive(true);
-		waitText.text = waitTime.ToString();
+	public void ActivateFadeOut() {
+		waitBeforeAttackingPanel.SetActive (true);
+		waitText.text = waitTime.ToString ();
 		Color temp = fadeImg.color;
 		temp.a = 1f;
 		fadeImg.color = temp;
 		StartCoroutine(CountDown());
 	}
 
-	void FadeOut()
-	{
-		if (canFade)
-		{
+	void FadeOut() {
+		if (canFade) {
 			Color temp = fadeImg.color;
 			temp.a -= (Time.deltaTime / fadeTime) / 2f;
 			fadeImg.color = temp;
 		}
 	}
 
-	IEnumerator CountDown()
-	{
+	IEnumerator CountDown() {
 		canFade = true;
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds (1);
 		waitTime -= 1;
 
-		if (waitTime != -1)
-		{
-			waitText.text = waitTime.ToString();
-			StartCoroutine(CountDown());
-		}
-		else
-		{
+		if (waitTime != -1) {
+			waitText.text = waitTime.ToString ();
+			StartCoroutine (CountDown ());
+		} else {
 			waitTime = fadeTime;
-			waitBeforeAttackingPanel.SetActive(false);
+			waitBeforeAttackingPanel.SetActive (false);
 		}
 
 	}
 
 } // class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

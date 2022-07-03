@@ -1,37 +1,56 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skill_DamageBoss : MonoBehaviour
-{
-    public LayerMask bossLayer;
-    public float radius;
-    public GameObject damageEffect;
-    public float damageCount;
+public class Skill_DamageBoss : MonoBehaviour {
 
-    private bool collided;
-    private BossHealth bossHealth;
+	public LayerMask bossLayer;
+	public float radius;
+	public GameObject damageEffect;
+	public float damageCount;
 
-    void Update()
-    {
-        Collider[] hits = Physics.OverlapSphere(transform.position, radius, bossLayer);
-        foreach(Collider c in hits)
-        {
-            if (c.isTrigger)
-            {
-                continue;
-            }
-           
-            collided = true;
-            bossHealth = c.gameObject.GetComponent<BossHealth>();
+	private bool collided;
+	private BossHealth bossHealth;
 
-            if (collided)
-            {
-                Instantiate(damageEffect, transform.position, transform.rotation);
-                bossHealth.BossTakeDamage(damageCount);
-                Destroy(gameObject);
-            }
-        }
-        
-    }
-}
+	void Update () {
+		Collider[] hits = Physics.OverlapSphere (transform.position, radius, bossLayer);
+		foreach (Collider c in hits) {
+			if (c.isTrigger) {
+				continue;
+			}
+			collided = true;
+			bossHealth = c.gameObject.GetComponent<BossHealth> ();
+
+			if (collided) {
+				Instantiate (damageEffect, transform.position, transform.rotation);
+				bossHealth.BossTakeDamage (damageCount);
+				Destroy (gameObject);
+			}
+		}
+	}
+
+} // class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

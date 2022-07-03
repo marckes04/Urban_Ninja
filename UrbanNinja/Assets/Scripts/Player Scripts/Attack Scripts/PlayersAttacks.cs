@@ -1,10 +1,9 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayersAttacks : MonoBehaviour
-{
+public class PlayersAttacks : MonoBehaviour {
 
 	public GameObject skillOne_EffectPrefab;
 	public GameObject skillOne_DamagePrefab;
@@ -63,18 +62,17 @@ public class PlayersAttacks : MonoBehaviour
 	private Button skillTwo_Btn;
 	private Button skillThree_Btn;
 
-	void Awake()
-	{
-		anim = GetComponent<Animator>();
-		audioSource = GetComponent<AudioSource>();
+	void Awake () {
+		anim = GetComponent<Animator> ();
+		audioSource = GetComponent<AudioSource> ();
 
-		skillOne_Btn = GameObject.Find("Skill One Button").GetComponent<Button>();
-		skillTwo_Btn = GameObject.Find("Skill Two Button ").GetComponent<Button>();
-		skillThree_Btn = GameObject.Find("Skill Three Button ").GetComponent<Button>();
+		skillOne_Btn = GameObject.Find ("Skill One Button").GetComponent<Button> ();
+		skillTwo_Btn = GameObject.Find ("Skill Two Button").GetComponent<Button> ();
+		skillThree_Btn = GameObject.Find ("Skill Three Button").GetComponent<Button> ();
 
-		skillOne_Btn.onClick.AddListener(() => SkillOneButtonPressed());
-		skillTwo_Btn.onClick.AddListener(() => SkillTwoButtonPressed());
-		skillThree_Btn.onClick.AddListener(() => SkillThreeButtonPressed());
+		skillOne_Btn.onClick.AddListener (() => SkillOneButtonPressed());
+		skillTwo_Btn.onClick.AddListener (() => SkillTwoButtonPressed());
+		skillThree_Btn.onClick.AddListener (() => SkillThreeButtonPressed());
 
 		s1_NotUsed = true;
 		s2_NotUsed = true;
@@ -82,79 +80,64 @@ public class PlayersAttacks : MonoBehaviour
 
 	}
 
-	void Update()
-	{
-		HandleButtonPresses();
+	void Update () {
+		HandleButtonPresses ();
 	}
 
 	// LISTENRES FOR BUTTONS BEGIN
 
-	public void AttackButtonPressed()
-	{
-		anim.SetBool(ANIMATION_ATTACK, true);
+	public void AttackButtonPressed() {
+		anim.SetBool (ANIMATION_ATTACK, true);
 	}
 
-	public void AttackButtonReleased()
-	{
-		anim.SetBool(ANIMATION_ATTACK, false);
+	public void AttackButtonReleased() {
+		anim.SetBool (ANIMATION_ATTACK, false);
 	}
 
-	public void SkillOneButtonPressed()
-	{
-		anim.SetBool(ANIMATION_SKILL_1, true);
+	public void SkillOneButtonPressed() {
+		anim.SetBool (ANIMATION_SKILL_1, true);
 	}
 
-	public void SkillTwoButtonPressed()
-	{
-		anim.SetBool(ANIMATION_SKILL_2, true);
+	public void SkillTwoButtonPressed() {
+		anim.SetBool (ANIMATION_SKILL_2, true);
 	}
 
-	public void SkillThreeButtonPressed()
-	{
-		anim.SetBool(ANIMATION_SKILL_3, true);
+	public void SkillThreeButtonPressed() {
+		anim.SetBool (ANIMATION_SKILL_3, true);
 	}
 
 	// LISTENERS FOR BUTTONS END
 
-	void HandleButtonPresses()
-	{
-		if (Input.GetKeyDown(KeyCode.I))
-		{
-			anim.SetBool(ANIMATION_ATTACK, true);
+	void HandleButtonPresses() {
+		if (Input.GetKeyDown (KeyCode.I)) {
+			anim.SetBool (ANIMATION_ATTACK, true);
 		}
 
-		if (Input.GetKeyUp(KeyCode.I))
-		{
-			anim.SetBool(ANIMATION_ATTACK, false);
+		if (Input.GetKeyUp (KeyCode.I)) {
+			anim.SetBool (ANIMATION_ATTACK, false);
 		}
 
-		if (Input.GetKeyDown(KeyCode.J))
-		{
-			if (s1_NotUsed)
-			{
+		if (Input.GetKeyDown (KeyCode.J)) {
+			if (s1_NotUsed) {
 				s1_NotUsed = false;
-				anim.SetBool(ANIMATION_SKILL_1, true);
-				StartCoroutine(ResetSkills(1));
+				anim.SetBool (ANIMATION_SKILL_1, true);
+				StartCoroutine (ResetSkills (1));
 			}
 		}
-
-		if (Input.GetKeyDown(KeyCode.K))
-		{
-			if (s2_NotUsed)
-			{
+			
+		if (Input.GetKeyDown (KeyCode.K)) {
+			if (s2_NotUsed) {
 				s2_NotUsed = false;
-				anim.SetBool(ANIMATION_SKILL_2, true);
-				StartCoroutine(ResetSkills(2));
+				anim.SetBool (ANIMATION_SKILL_2, true);
+				StartCoroutine (ResetSkills (2));
 			}
 		}
 
-		if (Input.GetKeyDown(KeyCode.L))
-		{
-			if (s3_NotUsed)
-			{
+		if (Input.GetKeyDown (KeyCode.L)) {
+			if (s3_NotUsed) {
 				s3_NotUsed = false;
-				anim.SetBool(ANIMATION_SKILL_3, true);
-				StartCoroutine(ResetSkills(3));
+				anim.SetBool (ANIMATION_SKILL_3, true);
+				StartCoroutine (ResetSkills (3));
 			}
 		}
 
@@ -163,118 +146,142 @@ public class PlayersAttacks : MonoBehaviour
 	// SKILL EFFECTS
 
 	// SKILL ONE
-	void SkillOne(bool skillOne)
-	{
-		if (skillOne)
-		{
-			Instantiate(skillOne_EffectPrefab, skillOne_Point.position,
+	void SkillOne(bool skillOne) {
+		if (skillOne) {
+			Instantiate (skillOne_EffectPrefab, skillOne_Point.position,
 				skillOne_Point.rotation);
-			audioSource.PlayOneShot(skillOneMusic1);
-			StartCoroutine(SkillOneCoroutine());
+			audioSource.PlayOneShot (skillOneMusic1);
+			StartCoroutine (SkillOneCoroutine());
 		}
 	}
 
-	void SkillOneSound(bool play)
-	{
-		if (play)
-		{
-			audioSource.PlayOneShot(playerSkillOneSound);
+	void SkillOneSound(bool play) {
+		if (play) {
+			audioSource.PlayOneShot (playerSkillOneSound);
 		}
 	}
 
-	void SkillOneEnd(bool skillOneEnd)
-	{
-		if (skillOneEnd)
-		{
-			anim.SetBool(ANIMATION_SKILL_1, false);
+	void SkillOneEnd(bool skillOneEnd) {
+		if (skillOneEnd) {
+			anim.SetBool (ANIMATION_SKILL_1, false);
 		}
 	}
 
-	IEnumerator SkillOneCoroutine()
-	{
-		yield return new WaitForSeconds(1.5f);
+	IEnumerator SkillOneCoroutine() {
+		yield return new WaitForSeconds (1.5f);
 		audioSource.PlayOneShot(skillOneMusic2);
-		Instantiate(skillOne_DamagePrefab, skillOnePoint_1.position, skillOnePoint_1.rotation);
-		Instantiate(skillOne_DamagePrefab, skillOnePoint_2.position, skillOnePoint_2.rotation);
-		Instantiate(skillOne_DamagePrefab, skillOnePoint_3.position, skillOnePoint_3.rotation);
-		Instantiate(skillOne_DamagePrefab, skillOnePoint_4.position, skillOnePoint_4.rotation);
-		Instantiate(skillOne_DamagePrefab, skillOnePoint_5.position, skillOnePoint_5.rotation);
-		Instantiate(skillOne_DamagePrefab, skillOnePoint_6.position, skillOnePoint_6.rotation);
-		Instantiate(skillOne_DamagePrefab, skillOnePoint_7.position, skillOnePoint_7.rotation);
-		Instantiate(skillOne_DamagePrefab, skillOnePoint_8.position, skillOnePoint_8.rotation);
+		Instantiate (skillOne_DamagePrefab, skillOnePoint_1.position, skillOnePoint_1.rotation);
+		Instantiate (skillOne_DamagePrefab, skillOnePoint_2.position, skillOnePoint_2.rotation);
+		Instantiate (skillOne_DamagePrefab, skillOnePoint_3.position, skillOnePoint_3.rotation);
+		Instantiate (skillOne_DamagePrefab, skillOnePoint_4.position, skillOnePoint_4.rotation);
+		Instantiate (skillOne_DamagePrefab, skillOnePoint_5.position, skillOnePoint_5.rotation);
+		Instantiate (skillOne_DamagePrefab, skillOnePoint_6.position, skillOnePoint_6.rotation);
+		Instantiate (skillOne_DamagePrefab, skillOnePoint_7.position, skillOnePoint_7.rotation);
+		Instantiate (skillOne_DamagePrefab, skillOnePoint_8.position, skillOnePoint_8.rotation);
 	}
 
 	// SKILL TWO
 
-	void SkillTwo(bool skillTwo)
-	{
-		if (skillTwo)
-		{
-			Instantiate(skillTwo_EffectPrefab, skillTwo_Point.position, skillTwo_Point.rotation);
-			audioSource.PlayOneShot(skillTwoMusic);
-			StartCoroutine(SkillTwoCoroutine());
+	void SkillTwo(bool skillTwo) {
+		if (skillTwo) {
+			Instantiate (skillTwo_EffectPrefab, skillTwo_Point.position, skillTwo_Point.rotation);
+			audioSource.PlayOneShot (skillTwoMusic);
+			StartCoroutine (SkillTwoCoroutine ());
 		}
 	}
 
-	void SkillTwoEnd(bool skillTwoEnd)
-	{
-		if (skillTwoEnd)
-		{
-			anim.SetBool(ANIMATION_SKILL_2, false);
+	void SkillTwoEnd(bool skillTwoEnd) {
+		if (skillTwoEnd) {
+			anim.SetBool (ANIMATION_SKILL_2, false);
 		}
 	}
 
-	IEnumerator SkillTwoCoroutine()
-	{
-		yield return new WaitForSeconds(1.5f);
-		Instantiate(skillTwo_DamagePrefab, skillTwoPoint_1.position, skillTwoPoint_1.rotation);
-		Instantiate(skillTwo_DamagePrefab, skillTwoPoint_2.position, skillTwoPoint_2.rotation);
-		Instantiate(skillTwo_DamagePrefab, skillTwoPoint_3.position, skillTwoPoint_3.rotation);
-		Instantiate(skillTwo_DamagePrefab, skillTwoPoint_4.position, skillTwoPoint_4.rotation);
-		Instantiate(skillTwo_DamagePrefab, skillTwoPoint_5.position, skillTwoPoint_5.rotation);
-		Instantiate(skillTwo_DamagePrefab, skillTwoPoint_6.position, skillTwoPoint_6.rotation);
+	IEnumerator SkillTwoCoroutine() {
+		yield return new WaitForSeconds (1.5f);
+		Instantiate (skillTwo_DamagePrefab, skillTwoPoint_1.position, skillTwoPoint_1.rotation);
+		Instantiate (skillTwo_DamagePrefab, skillTwoPoint_2.position, skillTwoPoint_2.rotation);
+		Instantiate (skillTwo_DamagePrefab, skillTwoPoint_3.position, skillTwoPoint_3.rotation);
+		Instantiate (skillTwo_DamagePrefab, skillTwoPoint_4.position, skillTwoPoint_4.rotation);
+		Instantiate (skillTwo_DamagePrefab, skillTwoPoint_5.position, skillTwoPoint_5.rotation);
+		Instantiate (skillTwo_DamagePrefab, skillTwoPoint_6.position, skillTwoPoint_6.rotation);
 	}
 
 	// SKILL THREE
 
-	void SkillThree(bool skillThree)
-	{
-		if (skillThree)
-		{
-			Instantiate(skillThree_EffectPrefab, skillThreePoint_1.position, skillThreePoint_1.rotation);
-			Instantiate(skillThree_EffectPrefab, skillThreePoint_2.position, skillThreePoint_2.rotation);
-			Instantiate(skillThree_EffectPrefab, skillThreePoint_3.position, skillThreePoint_3.rotation);
-			Instantiate(skillThree_EffectPrefab, skillThreePoint_4.position, skillThreePoint_4.rotation);
-			Instantiate(skillThree_EffectPrefab, skillThreePoint_5.position, skillThreePoint_5.rotation);
+	void SkillThree(bool skillThree) {
+		if (skillThree) {
+			Instantiate (skillThree_EffectPrefab, skillThreePoint_1.position, skillThreePoint_1.rotation);
+			Instantiate (skillThree_EffectPrefab, skillThreePoint_2.position, skillThreePoint_2.rotation);
+			Instantiate (skillThree_EffectPrefab, skillThreePoint_3.position, skillThreePoint_3.rotation);
+			Instantiate (skillThree_EffectPrefab, skillThreePoint_4.position, skillThreePoint_4.rotation);
+			Instantiate (skillThree_EffectPrefab, skillThreePoint_5.position, skillThreePoint_5.rotation);
 		}
 	}
 
-	void SkillThreeEnd(bool skillThreeEnd)
-	{
-		if (skillThreeEnd)
-		{
-			anim.SetBool(ANIMATION_SKILL_3, false);
+	void SkillThreeEnd(bool skillThreeEnd) {
+		if (skillThreeEnd) {
+			anim.SetBool (ANIMATION_SKILL_3, false);
 		}
 	}
 
-	IEnumerator ResetSkills(int skill)
-	{
-		yield return new WaitForSeconds(3f);
+	IEnumerator ResetSkills(int skill) {
+		yield return new WaitForSeconds (3f);
 
-		switch (skill)
-		{
-			case 1:
-				s1_NotUsed = true;
-				break;
+		switch (skill) {
+		case 1:
+			s1_NotUsed = true;
+			break;
 
-			case 2:
-				s2_NotUsed = true;
-				break;
+		case 2:
+			s2_NotUsed = true;
+			break;
 
-			case 3:
-				s3_NotUsed = true;
-				break;
+		case 3:
+			s3_NotUsed = true;
+			break;
 		}
 	}
 
 } //class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
